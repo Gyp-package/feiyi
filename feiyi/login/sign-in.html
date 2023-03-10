@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="./SI-style.css">
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="./fonts">
+    <!-- 导入路由中间件 -->
+    <script src="./app.js"></script>
+    <!-- 连接数据库 -->
+    <!-- <script src="./SI-mysql.js"></script> -->
+</head>
+
+<body>
+    <!-- 初次接触网格布局 display:grid -->
+    <!-- 1. 用户登录 -->
+    <div class="form-container sign-in-container">
+        <form action="#" class="pos">
+            <div class="lo">
+                <h1>用户登录</h1>
+            </div>
+
+            <!-- 字体图标 -->
+            <div class="social-container">
+                <!-- TODO 使用第三方app登录 -->
+                <a href="#" class="social"> <i class="icomoon icon-qq"></i> </a>
+                <a href="#" class="social"> <i class="icomoon icon-weixin "> </i> </a>
+                <a href="#" class="social"> <i class="icomoon icon-weibo"> </i> </a>
+                <a href="#" class="social"> <i class="icomoon icon-github"> </i> </a>
+            </div>
+            <span>选择任意方式登录您的账户</span>
+            <!-- 1.用户名 -->
+            <div class="formRow"><input type="text" placeholder="用户名" id="username"></div>
+            <!-- 2.密码 -->
+            <div class="formRow"><input type="password" placeholder="密码" id="password"></div>
+            <!-- 3.登录按钮 -->
+            <div class="loginF">
+                <p><a href="#">登录</a></p>
+            </div>
+
+            <div class="loginFooter">
+                <!-- TODO 忘记密码，修改密码 -->
+                <div class="pas1"><a href="#">忘记密码</a></div>
+                <!-- 4.新用户注册跳转页面 -->
+                <div class="pas"> <a href="./sign-up.html">新用户注册</a></div>
+            </div>
+        </form>
+    </div>
+    <script>
+        //1. 偷懒版根据本地存储的localstorage判断,状态维护
+        if (localStorage.getItem('success')) {
+            window.location.href = ('./index.html')
+        }
+        // 2.根据服务器端对应的页面内容响应
+        // 2.1状态维护，身份已认证：登录未超时，存储密钥对比检测成功
+
+        document.querySelector('.loginF').addEventListener('click', function(e) {
+            e.preventDefault()
+            let username = document.getElementById('username').value
+            let password = document.getElementById('password').value
+            let xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://127.0.0.1:3007/api/login')
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+            xhr.send(`username=${username}&password=${password}`)
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = JSON.parse(xhr.response)
+
+                    // console.log(data.message);
+                    localStorage.setItem('token', data.token)
+                    a = localStorage.getItem('token')
+                    console.log(localStorage.getItem('success'));
+                    // if (data.status === 0) {
+                    if (data.message === '登陆成功') {
+                        console.log('hello')
+                            // alert('登录成功！')
+                        window.location.href = './index.html'
+                            // this.props.history.replace = './index.html'
+                            // console.log('123');
+                    } else {
+                        alert('密码错误或用户未注册，登陆失败！')
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?64kkbd');
+    src: url('fonts/icomoon.eot?64kkbd#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?64kkbd') format('truetype'), url('fonts/icomoon.woff?64kkbd') format('woff'), url('fonts/icomoon.svg?64kkbd#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.discuss {
+    position: relative;
+    height: 624px;
+    background-color: pink;
+    background-image: url(./青花瓷.png);
+}
+
+.lf {
+    float: left;
+    height: 624px;
+    width: 624px;
+}
+
+.ri {
+    position: absolute;
+    /* float: right; */
+    height: 624px;
+    width: 837px;
+    left: 624px;
+    /* background-color: skyblue; */
+}
+
+.nav-bar {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 750px;
+    height: 123px;
+    /* background-color: #ffffff; */
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.wa1 {
+    font-size: larger;
+    font-weight: 800;
+}
+
+.wa2 {
+    margin-left: 4px;
+    font-size: small;
+    color: rgb(114, 114, 114);
+}
+
+.wa3 {
+    margin-left: 25px;
+    color: black;
+}
+
+.b1 {
+    margin-top: 25px;
+    margin-left: 70px;
+}
+
+.b2 {
+    background-color: rgba(242, 242, 242);
+    position: absolute;
+    top: 55px;
+    margin-left: 20px;
+    display: inline-block;
+    width: 514px;
+    height: 51px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 0px;
+}
+
+input {
+    padding-left: 10px;
+}
+
+.b3 {
+    position: absolute;
+    top: 57px;
+    display: inline-block;
+    width: 72px;
+    height: 51px;
+    margin-left: 555px;
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    /* background-color: rgba(128, 215, 246); */
+}
+
+.b3 a {
+    height: 51px;
+    line-height: 51px;
+    color: #ffffff;
+}
+
+.b3:hover {
+    background-color: rgba(0, 174, 246);
+    cursor: pointer;
+}
+
+.per1 {
+    /* display: flex; */
+    /* 排行方向 */
+    /* flex-direction: column; */
+    /* 换行 */
+    /* flex-wrap: nowrap; */
+    /* 横轴1 */
+    /* justify-content: start; */
+    /* 纵轴 */
+    /* align-items: baseline; */
+    /* 行与行之间的布局 */
+    /* align-content: start; */
+    position: absolute;
+    top: 123px;
+    left: 40px;
+    width: 750px;
+    height: 501px;
+    /* background-color: rgb(178, 209, 222); */
+}
+
+.per11 {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.pic {
+    float: left;
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    padding-left: 70px;
+}
+
+.com1 {
+    position: absolute;
+    left: 130px;
+    top: 20px;
+    font-size: small;
+}
+
+.per12 {
+    position: absolute;
+    height: 150px;
+    top: 50px;
+    left: 130px;
+    /* 背景颜色在这 */
+    /* background-color: yellow; */
+}
+
+.on {
+    font-size: medium;
+}
+
+.on1 {
+    position: absolute;
+    margin-top: 10px;
+    width: 550px;
+    color: rgb(148, 153, 160);
+    /* background-color: red; */
+    height: 25px;
+    font-size: small;
+}
+
+.i1 {
+    font-style: normal;
+    font-family: "icomoon";
+    font-size: 17px;
+}
+
+.i1:before {
+    content: "\e96a";
+}
+
+.i2 {
+    position: absolute;
+    top: 2px;
+    font-style: normal;
+    font-family: "icomoon";
+    font-size: 17px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.i2:before {
+    content: "\e96b";
+}
+
+.per20 {
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    width: 650px;
+}
+
+.per30 {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: 650px;
+}
+
+.per40 {
+    position: absolute;
+    top: 350px;
+    /* left: 20px; */
+    width: 650px;
+}
+
+
+/* page  */
+
+.page {
+    position: absolute;
+    top: 440px;
+    left: 60px;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 3px;
+    margin-right: 8px;
+    color: rgb(78, 110, 242);
+    background-color: #ffffff;
+    /* color: #ffffff;
+    background-color: rgb(78, 110, 242); */
+    /* border: 1px solid black; */
+}
+
+li:first-child {
+    color: #ffffff;
+    background-color: rgb(78, 110, 242);
+}
+
+li:last-child {
+    width: 70px;
+}
+
+li:hover {
+    /* color: rgb(78, 110, 242);
+    background-color: #ffffff; */
+    color: #ffffff;
+    background-color: rgb(78, 110, 242);
+}

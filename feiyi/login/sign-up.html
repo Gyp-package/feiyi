@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="./SI-style.css">
+    <link rel="stylesheet" href="./SU-style.css">
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="./fonts">
+    <!-- 创建中间路由 -->
+    <script src="./app.js"></script>
+</head>
+
+<body>
+    <!-- 初次接触网格布局 display:grid -->
+    <!-- 1. 用户登录 -->
+    <div class="form-container sign-in-container">
+        <form action="#" class="pos">
+            <div class="lo">
+                <h1>用户注册</h1>
+            </div>
+            <!-- 1.用户名 -->
+            <div class="formRow"><input type="text" placeholder="用户名" id="username"></div>
+            <!-- 2.密码 -->
+            <div class="formRow"><input type="password" placeholder="密码" id="password"></div>
+            <!-- <div class="formRow"><input type="text" placeholder="注册邮箱"></div>
+            <div class="loginF">
+                <p><a href="#">发送验证码</a></p>
+            </div> -->
+            <!-- <div class="formRow"><input type="text" placeholder="验证码"></div> -->
+            <!-- 3.提交注册 -->
+            <div class="loginU">
+                <p><a href="#">注册</a></p>
+            </div>
+            <!-- 4.跳转登录页面 -->
+            <a href="./sign-in.html" class="a1">返回登录页面</a>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.loginU').addEventListener('click', function(e) {
+            e.preventDefault()
+            let username = document.getElementById('username').value
+            let password = document.getElementById('password').value
+            let xhr = new XMLHttpRequest()
+            xhr.open('post', 'http://127.0.0.1:3007/api/reguser')
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            xhr.send(`username=${username}&password=${password}`)
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.response)
+                    let data = JSON.parse(xhr.response)
+                    alert(data.message)
+                    if (data.status === 0) {
+                        // if (data.message === '登陆成功') {
+                        // window.location.href = './index.html';
+                        window.location.assign('./sign-in.html');
+                        console.log('123');
+                    }
+                }
+            }
+        })
+        document.querySelector('.loginF').addEventListener('click', function(e) {
+            // console.log('1');
+            e.preventDefault()
+            let yzm = document.querySelector('.loginF')
+            let xhr = new XMLHttpRequest()
+            xhr.open('get', 'http://127.0.0.1:3007/yzm')
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            xhr.send()
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = JSON.parse(xhr.response)
+                    if (data.status === 0) {
+                        alert('验证码发送成功！')
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

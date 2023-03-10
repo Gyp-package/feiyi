@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指尖非遗</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 一.页眉：徽章，题目，用户登录，注册，搜索陕西非遗产品以及查询相关文创产品 -->
+    <div class="all">
+        <div id="header">
+            <div class="he l">
+                <div class="ll"><img src="./徽章.jpg" alt="" width="80px" height="80px"></div>
+                <div class="lll">指尖非遗</div>
+            </div>
+
+            <div class="he r">
+                <div class="search"> <input type="text">
+                    <span class="s1"></span>
+                    <div><span class="s2"></span>
+                        <span class="s3"></span></div>
+                </div>
+                <!-- 时间 -->
+                <div id="rr">
+                    {{message}}
+                </div>
+            </div>
+        </div>
+        <!-- 二.导航栏：主内容的5个分区栏 -->
+        <div class="topnav">
+            <ul class="nav">
+                <li class="section 1" id="se1">
+                    <a href="#se1" @click="jump(1)">视频介绍区</a>
+                    <!-- <a href="javascript:void(0)" @click="jump(1)">视频介绍区</a> -->
+                </li>
+                <li class="section 2" id="se2">
+                    <a href="#se2" @click="jump(2)">经典非遗区</a>
+
+                </li>
+                <li class="section 3" id="se3">
+                    <a href="#se3" @click="jump(3)">文创售卖区</a>
+
+                </li>
+                <li class="section 4" id="se4">
+                    <a href="#se4" @click="jump(4)">线下实体店</a>
+
+                </li>
+                <li class="section 5" id="se5">
+                    <a href="#se5" @click="jump(5)">畅所欲言区</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 三.主内容 -->
+    <div class="contain">
+        <!-- 我是主内容 -->
+        <!-- 1.视频介绍区 -->
+        <div class="video" id="section-1">
+            <video id="myVedio" controls="controls" width="100%" height="760px" autoplay="autoplay" loop="loop" muted="muted">
+                <source src="./非遗1.mp4" class="video" ></source>
+            </video>
+        </div>
+        <!-- 2.经典介绍区 -->
+        <div class="introduce" id="section-2">
+
+            <div class="introduce" id="section-2">
+
+                <div class="intro-contain">
+
+                    <div class="intro-image">
+
+                        <img src="./pic/bar1.jpg" alt="" height="" style="height: 400px;">
+                    </div>
+
+                    <div class="explain">
+
+                        <div class="show" id="show">
+                            表演类非遗 </div>
+
+                        <div class="handiwork" id="handiwork">
+                            工艺类非遗 </div>
+
+                        <div class="writing" id="writing">
+                            表演艺术类“非遗”指的是“人类在历史上创造并以活态形式原汁原味传承至今的，通过唱腔、动作、台词等艺术表现形式来表现演出者内心世界的传统表演艺术形式”，包括说唱、戏剧、歌舞、音乐、传统体育竞技等几大类。表演艺术类非物质文化遗产是一个国家的民族文化积淀，体现了人类表演艺术的精华，从中可看到一个民族或国家的历史进程、文化心理和审美情趣。                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3.产品，售卖 -->
+        <div class="product" id="section-3">我是产品售卖区</div>
+        <!-- 4.线下，实体店 -->
+        <div class="offline" id="section-4">我是线下实体店区</div>
+        <!-- 5.讨论区 -->
+        <div class="discuss" id="section-5">
+
+        </div>
+    </div>
+    <!-- 四.页脚，
+        右侧：关于我们（参赛成员介绍）， 版权与免责声明（非商业用途等等）-->
+    <div class="footer">
+        <div class="clearfix">
+            <div class="box left">
+                <div class="left1">
+                    <div class="le11">
+                        <div>友情链接 : </div>
+                    </div>
+
+                    <div class="le22">
+                        <div class="li">
+                            <a href="https://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&ie=gb18030&word=%B7%C7%D2%C5%CD%BC%C6%AC&fr=ala&ala=1&alatpl=normal&pos=0&dyTabStr=MCwzLDEsNiw0LDIsNSw3LDgsOQ%3D%3D">部分图片源自百度百科</a>
+                        </div>
+                        <div class="li"><a href="https://www.ihchina.cn/#page9">中国非物质文化遗产网</a></div>
+
+                        <div class="li">
+                            <a href="https://www.baidu.com/s?ie=UTF-8&wd=%E7%BE%8E%E5%9B%A2&tn=15007414_dg">美团文创官热搜</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box right">
+                <div class="li"> <a href="#">关于我们</a> </div>
+                <div class="li2"> <a href="#">版权与免责声明</a> </div>
+            </div>
+        </div>
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
+
+    <script src="./index.js"></script>
+
+    <script>
+        var show = document.getElementById('show');      
+        var writing = document.getElementById('writing');      
+        var writingHandiwork = document.getElementById('writingHandiwork');      
+        show.onclick = function() {        
+            writing.innerHTML = "表演艺术类“非遗”指的是“人类在历史上创造并以活态形式原汁原味传承至今的，通过唱腔、动作、台词等艺术表现形式来表现演出者内心世界的传统表演艺术形式”，包括说唱、戏剧、歌舞、音乐、传统体育竞技等几大类。表演艺术类非物质文化遗产是一个国家的民族文化积淀，体现了人类表演艺术的精华，从中可看到一个民族或国家的历史进程、文化心理和审美情趣。"      
+        }
+
+              
+        handiwork.onclick = function() {        
+            writing.innerHTML = "手工艺类“非遗”指的是“人类在历史上创造并以活态形式原汁原味传承至今的，通过非遗传承人来传承的一些极具中华文化特色的一些方法或者技巧，包括剪纸，刺绣，中医等几大类。手工技艺类非物质文化遗产是一个国家的民族文化积淀，体现了人类从古到今工艺上的智慧，从中可看到一个民族或国家的历史进程、文化心理和审美情趣。"      
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+
+    <style>
+        .out {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            /* background-color: pink; */
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        
+        .out:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./泼墨山云.jpg" alt="" width="100%" height="100%">
+        <div class="out">退出登录</div>
+    </div>
+    <script>
+        const btn = document.querySelector('.out')
+        const token = window.localStorage.getItem('token')
+        btn.addEventListener('click', function(e) {
+            console.log('hello');
+            window.location.href = ('./sign-in.html')
+            localStorage.clear()
+        })
+
+        let xhr = new XMLHttpRequest();
+        // console.log('111');
+        xhr.open('post', 'http://127.0.0.1:3007/api/denglu')
+            // console.log('222');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        xhr.setRequestHeader('token', token)
+            // xhr.setRequestHeader('Access-Control-Request-Hearders', 'token')
+            // console.log('333');
+            // xhr.send(`token=${token}`)
+
+        xhr.send()
+            // console.log('444');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // console.log('222');
+                // token = window.localStorage.getItem('token') //拿到加密后的字符串
+                let data = JSON.parse(xhr.response)
+                    // console.log('111');
+                    // 解析成对象
+                console.log(data);
+                // console.log(typeof(data));
+                if (data.status === 111) {
+
+                    alert('验证失败，请重新登陆');
+                    window.location.href = ('./sign-in.html')
+                }
+                if (data.status === 123) {
+                    alert('登录过期，请重新登陆');
+                    window.location.href = ('./sign-in.html')
+                }
+                // console.log(data.message);
+                // alert(data.message)
+                // if (data.status == 1) {
+                //     alert('登录过期，请重新登录')
+                //     window.location.href('./sign-in.html');
+                // }
+            }
+        }
+
+        // 1.偷懒版检测用户登录状态，本都存储 Localstorage，
+        // 页面拦截：
+        // if (!localStorage.getItem('success')) {
+        //     alert('用户尚未登录，请先登录')
+        //     window.location.href = ('./sign-in.html')
+        // }
+        // 2.根据服务器端对应的页面内容响应
+        // 2.1.身份未认证：登录超时，存储密钥对比检测
+    </script>
+</body>
+
+</html>

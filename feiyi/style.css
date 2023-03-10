@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?9dx1jp');
+    src: url('fonts/icomoon.eot?9dx1jp#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?9dx1jp') format('truetype'), url('fonts/icomoon.woff?9dx1jp') format('woff'), url('fonts/icomoon.svg?9dx1jp#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+/* 1.页眉 */
+
+.all {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 132px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 800;
+}
+
+body #header {
+    /* float: left; */
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    height: 80px;
+    text-align: center;
+    z-index: 999;
+    font-style: STKaiti;
+    font: 14px/1.5 fzqkbysjw, Arial, Tahoma, Helvetica, sans-serif
+}
+
+.he {
+    color: #f1f1f1;
+    height: 80px;
+    line-height: 80px;
+}
+
+.l {
+    float: left;
+    margin-left: 90px;
+    width: 300px;
+    /* background-color: rgb(128, 120, 120); */
+}
+
+.ll {
+    float: left;
+}
+
+.lll {
+    position: relative;
+    float: left;
+    left: 20px;
+    letter-spacing: 2px;
+}
+
+.r {
+    position: absolute;
+    right: -1000px;
+    float: right;
+    margin-right: 90px;
+    width: 700px;
+    /* background-color: rgb(115, 89, 89); */
+}
+
+#rr {
+    float: right;
+    font: 14px/1.5 fzqkbysjw, Arial, Tahoma, Helvetica, sans-serif;
+    width: 300px;
+    height: 80px;
+    line-height: 90px;
+}
+
+
+/* .search {
+    height: 90px;
+    line-height: 90;
+} */
+
+.search input {
+    position: relative;
+    top: 25px;
+    left: 150px;
+    float: left;
+    display: block;
+    height: 30px;
+    width: 190px;
+    border-radius: 20px;
+}
+
+.search .s1,
+span {
+    position: relative;
+    float: left;
+    left: 110px;
+    top: -1px;
+    font-family: "icomoon";
+    font-size: 22px;
+    color: rgb(210, 206, 206);
+    letter-spacing: 20px;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+.he .search .s2 {
+    margin-left: 10px;
+}
+
+
+/* .search .s2 {
+    position: relative;
+    float: left;
+    left: 3px;
+} */
+
+
+/* 2.导航 */
+
+.topnav {
+    /* float: left; */
+    position: absolute;
+    top: 80px;
+    height: 54px;
+    width: 100%;
+    line-height: 54px;
+    text-align: center;
+    /* background-color: #f1f1f1; */
+    z-index: 999;
+    /* background-color: rgb(170, 136, 136); */
+    /* margin: 40px auto; */
+}
+
+.nav {
+    padding: 0 50px;
+}
+
+.nav li {
+    float: left;
+    list-style-type: none;
+    width: 20%;
+    line-height: 48px;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 39px;
+    color: #f1f1f1;
+}
+
+.nav a:hover {
+    /* background-color: rgb(130, 116, 98);
+border-radius: 30%; */
+    color: rgb(228, 229, 233);
+    border-bottom: 4px solid rgb(193, 75, 75);
+}
+
+.nav li:last-child a {
+    padding: 0 41px 0 42px;
+}
+
+
+/* 3.主内容 */
+
+.contain {
+    position: relative;
+    /* top: 136px; */
+}
+
+.contain div {
+    height: 624px;
+    border: 1px solid black;
+    /* background-color: yellow; */
+}
+
+.contain video {
+    float: left;
+    position: absolute;
+    top: -135px;
+    left: -0px;
+}
+
+
+/* 2.经典介绍区 */
+
+.introduce {
+    position: relative;
+    background-image: url(./pic/back2.jpg);
+    background-size: 1263px 642px;
+}
+
+.introduce div {
+    height: 0px;
+}
+
+.introduce .intro-contain {
+    position: absolute;
+    /* transform: translateX(50%); */
+    top: 90px;
+    left: 278px;
+    height: 400px;
+    width: 750px;
+    /* background-color: black; */
+    background-image: url(./pic/卷轴.jpg);
+    /* background: no-repeat; */
+    background-size: 750px 400px;
+}
+
+.introduce .explain {
+    /* background-color: #777; */
+    position: absolute;
+    height: 334px;
+    width: 626px;
+    top: 26px;
+    left: 92px;
+}
+
+.introduce .explain .show {
+    position: absolute;
+    color: white;
+    height: 85px;
+    width: 32px;
+    border-radius: 30%;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    top: 10px;
+    left: 10px;
+    background-color: #cbbdb6;
+    cursor: pointer;
+}
+
+.introduce .explain .handiwork {
+    position: absolute;
+    color: white;
+    top: 114px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 16px;
+    left: 10px;
+    height: 85px;
+    width: 32px;
+    border-radius: 30%;
+    background-color: #cbbdb6;
+    cursor: pointer;
+}
+
+.introduce .explain .handiwork:hover {
+    background-color: #cba2a2;
+}
+
+.introduce .explain .show:hover {
+    background-color: #cba2a2;
+}
+
+.introduce .explain .writing {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    height: 284px;
+    width: 526px;
+    line-height: 40px;
+    /* background-color: #000; */
+}
+
+
+/* 讨论区 */
+
+.discuss {
+    background: url('./评论区.jpg');
+}
+
+
+/* 4.页脚 */
+
+.footer {
+    background: url(./页脚2.jpg);
+    background-size: 1477px 100px;
+}
+
+.box {
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    height: 70px;
+    padding: 50px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.left {
+    border-right: solid 1px #777;
+}
+
+.left1 {
+    position: relative;
+}
+
+.le11 {
+    width: 50%;
+    float: left;
+    /* background-color: #fff; */
+    text-align: center;
+}
+
+.le22 {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: -30px;
+    float: left;
+    height: 70px;
+    line-height: 23px;
+    /* background-color: rgb(114, 113, 113); */
+}
+
+.le22 a {
+    font-size: small;
+    padding-bottom: 8px;
+}
+
+.right {
+    position: relative;
+    /* background-color: #fff; */
+    padding-right: 40px;
+}
+
+.right .li {
+    position: absolute;
+    top: 18px;
+    margin: 5px;
+}
